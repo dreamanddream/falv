@@ -1,0 +1,130 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:aty="http://www.thunisoft.com">
+<head>
+    <meta type="aty-meta" name="javaLocation" content="com.thunisoft.czxtpt.controller.tj.CzqkcxController.java" th:remove="all">
+    <meta type="aty-meta" name="cssLocation" content="css/tj/czqkcx.css" th:remove="all">
+    <meta type="aty-meta" name="jsLocation" content="js/tj/czqkcx.js" th:remove="all">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" th:href="@{/webjars/artery/artery-ui.css}">
+    <link rel="stylesheet" aty:import>
+    <link rel="stylesheet" th:href="@{/css/tj/czqkcx.css}">
+    <title>title</title>
+    <base th:href="@{/}">
+</head>
+<body>
+<div id="app" style="width:100%;height:100%">
+    <aty-region-layout :border="false">
+        <aty-region-west :width="472" :border="false" class="fd-lay-left">
+            <aty-region-layout :border="false">
+                <aty-region-north :height="60" class="fd-h1" :border="false">
+                    <aty-text text="筛选条件"></aty-text>
+                </aty-region-north>
+                <aty-region-center>
+                    <aty-panel class="fd-content-left">
+                        <aty-form :data="cxtj" :label-width="114">
+                            <aty-select label="信访方式: " v-model="cxtj.xffs" multiple code-type="1000008" style="margin-top: 12px;"
+                                        ref="refXffs"></aty-select>
+                            <aty-checkbox-group label="处置状态: " v-model="cxtj.czjd" :data-list="czjdList"></aty-checkbox-group>
+                            <aty-input label="信访件标题: " v-model="cxtj.xfjbt"></aty-input>
+                            <aty-input label="信访编号: " v-model="cxtj.xfbh"></aty-input>
+                            <aty-select label="信访来源: " v-model="cxtj.xfly" :data="xflyList" multiple></aty-select>
+                            <aty-date-picker v-model="cxtj.xfStartTime" label="信访日期: " class="fd-left-line"></aty-date-picker>
+                            <aty-date-picker v-model="cxtj.xfEndTime" label="至" :label-width="30" class="fd-left-line-02"></aty-date-picker>
+                            <aty-date-picker v-model="cxtj.czStartTime" label="处置日期: " class="fd-left-line"></aty-date-picker>
+                            <aty-date-picker v-model="cxtj.czEndTime" label="至" class="fd-left-line-02" :label-width="30"></aty-date-picker>
+                            <aty-date-picker v-model="cxtj.bjStartTime" label="办结日期: " class="fd-left-line"></aty-date-picker>
+                            <aty-date-picker v-model="cxtj.bjEndTime" label="至" class="fd-left-line-02" :label-width="30"></aty-date-picker>
+                            <aty-input label="关键字内容: " v-model="cxtj.gjznr" style="margin-top:142px"></aty-input>
+                            <aty-input label="问题属地:" v-model="cxtj.wtsd"></aty-input>
+                            <aty-input label="问题描述: " v-model="cxtj.wtms"></aty-input>
+                            <aty-radio-group label="存在监督事项: " v-model="cxtj.czjdsx" :data-list="czjdsxList"></aty-radio-group>
+                            <aty-input label="反映人: " v-model="cxtj.fyr"></aty-input>
+                            <aty-input label="被反映人: " v-model="cxtj.bfyr"></aty-input>
+                            <aty-select label="处置方式: " v-model="cxtj.czfs" multiple code-type="45000452"></aty-select>
+                            <aty-organ-tree label="承办部门: " v-model="cxtj.cbbm" multiple select-type="corp_dept"></aty-organ-tree>
+                            <aty-checkbox-group label="署名情况: " v-model="cxtj.smqk" :data-list="smqkList"></aty-checkbox-group>
+                            <aty-checkbox-group v-model="cxtj.gzqk" label="告知情况: " :data-list="gzqkList"></aty-checkbox-group>
+                            <aty-checkbox-group label="答复情况: " v-model="cxtj.dfqk" :data-list="dfqkList"></aty-checkbox-group>
+                            <aty-checkbox-group label="是否属实: " v-model="cxtj.sfss" code-type="1000012"></aty-checkbox-group>
+                            <aty-select label="谈话函询结论: " v-model="cxtj.thhxjl" code-type="45000501" multiple></aty-select>
+                            <aty-select code-type="45000558" label="初步核实结论: " v-model="cxtj.cbhsjl" multiple></aty-select>
+                            <aty-select label="党纪处分: " v-model="cxtj.djcf" multiple code-type="45000604"></aty-select>
+                            <aty-select label="政务处分: " v-model="cxtj.zwcf" code-type="45000605" multiple></aty-select>
+                            <aty-select label="其他处理: " v-model="cxtj.qtcl" code-type="45000606" multiple></aty-select>
+                            <aty-select label="组织措施: " v-model="cxtj.zzcs" multiple code-type="1000017"></aty-select>
+                            <aty-checkbox-group label="是否移送司法: " v-model="cxtj.sfyssf" :data-list="sfyssfList"></aty-checkbox-group>
+                            <aty-checkbox-group label="反馈状态: " v-model="cxtj.fkzt" :data-list="fkztList"></aty-checkbox-group>
+                        </aty-form>
+                    </aty-panel>
+                </aty-region-center>
+                <aty-region-south class="fd-bottom-btn" :border="false">
+                    <aty-button text="查询" type="primary" @click="search" class="fd-search-btn"></aty-button>
+                    <aty-button text="重置" @click="resetCxtj" class="fd-reset-btn"></aty-button>
+                </aty-region-south>
+            </aty-region-layout>
+        </aty-region-west>
+        <aty-region-center class="fd-lay-right">
+            <aty-region-layout :border="false" class="fd-fy">
+                <aty-region-north :height="60" style="overflow: visible" class="fd-h1 fd-content-right01" :border="false">
+                    <aty-float-layout>
+                        <aty-text text="查询结果"></aty-text>
+                        <span style="position: absolute;right: 50%">按照</span>
+                        <aty-select v-model="cxtj.term" class="fd-sel-term" clearable :data="termList" @change="changeOrderList"></aty-select>
+                        <aty-select v-model="cxtj.orders" class="fd-sel-orders" :data="orderList" clearable @change="changeOrderList"></aty-select>
+                        <span style="position: absolute;right: 15%;">排序</span>
+                        <aty-button text="导出" float="right" @click="exportCzxttjData" class="fd-uplode-btn"></aty-button>
+                    </aty-float-layout>
+                </aty-region-north>
+                <aty-region-center class="fd-content-right02">
+                    <div class="fd-wcxjg" v-show="!isShow"></div>
+                    <aty-card width="100%" height="120px" v-for="(cxjg, cxjgIndex) in this.cxjgList" :key="cxjgIndex" class="fd-right-item" :bordered="false" dis-hover :padding="9">
+                        <aty-region-layout :border="false">
+                            <aty-region-center>
+                                <aty-panel>
+                                    <div class="fd-content-spanWrap">
+                                        <div v-text="'信访编号：'+cxjg.xfbh" class="fd-content-border fd-bold"></div>
+                                        <div class="fd-lay-01">
+                                            <div v-text="'处置日期：'+((cxjg.czrq!=null)?cxjg.czrq:'')" class="fd-content-border fd-fl"></div>
+                                            <div v-text="'处置方式：'+(cxjg.czfs?cxjg.czfs:'')" class="fd-content-border fd-fl"></div>
+                                        </div>
+                                        <div class="fd-lay-01">
+                                            <div v-text="'办结日期：'+((cxjg.bjrq!=null)?cxjg.bjrq:'')" class="fd-content-border fd-fl"></div>
+                                            <div v-text="'是否属实：'+(cxjg.sfss?cxjg.sfss:'')" class="fd-content-border fd-fl"></div>
+                                        </div>
+                                    </div>
+                                    <div class="fd-content-spanWrap">
+                                        <div v-text="'被反映人：'+cxjg.bfyr" class="fd-content-border fd-bold"></div>
+                                        <div v-text="'承办部门：'+(cxjg.cbbm?cxjg.cbbm:'')" class="fd-content-border"></div>
+                                        <div v-text="'答复情况：'+cxjg.dfqk" class="fd-content-border"></div>
+                                    </div>
+                                    <div class="fd-content-spanWrap">
+                                        <div v-text="'反映人：'+(cxjg.fyr?cxjg.fyr:'')" class="fd-content-border" style="line-height:40px;"></div>
+                                        <div v-text="'告知情况：'+cxjg.gzqk" class="fd-content-border"></div>
+                                    </div>
+                                </aty-panel>
+                            </aty-region-center>
+                            <aty-region-east :border="false" class="fd-content-handle" v-if="(cxjg.xfid != null)?true:false">
+                                <!-- <aty-link text="查看详情" @click="openDetail(cxjg.xfid)" v-if="(cxjg.xfid != null)?true:false"></aty-link>  -->
+                                <div>
+                                    <div @click="openDetail(cxjg.xfid)" class="fd-xq">
+                                        查看详情
+                                    </div>
+                                </div>
+                            </aty-region-east>
+                        </aty-region-layout>
+                    </aty-card>
+                </aty-region-center>
+                <aty-pagination style="margin-left: 15px;position: fixed;bottom: 0px;z-index: 9; width: 100%; background-color: #fff;"  v-show="isShow" @page-size-change="pageSizeChange" show-sizer show-elevator :total="this.totalNumber" @change="pageChange" ref="pageLimit" show-total :limit="20" :limit-opts="[5,10, 15, 20]"></aty-pagination>
+            </aty-region-layout>
+        </aty-region-center>
+    </aty-region-layout>
+</div>
+<script type="text/javascript" th:src="@{/js/common/jQuery.v1.11.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/vue/vue.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/artery/artery-ui.min.js}"></script>
+<script type="text/javascript" aty:import></script>
+<script type="text/javascript" th:src="@{/js/tj/czqkcx.js}"></script>
+</body>
+</html>

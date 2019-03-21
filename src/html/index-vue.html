@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>刑事法官智能办案系统</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/component-popup.css">
+    <link href="../css/component-loading.css" rel="stylesheet">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../css/userSelf.css">
+</head>
+<body data-js="index/index.js">
+<div class="fd-body-wrap" id="js-page-init">
+    <header class="fd-header">
+        <img src="../images/logo.png" alt="">
+        <p>刑事法官智能办案系统</p>
+    </header>
+    <div class="fd-container fd-clearfix">
+        <div class="fd-container-left fd-fl">
+            <ul class="fd-left-tab-top fd-clearfix">
+                <li class="active">电子卷宗</li>
+                <li>相似案例</li>
+                <li>法律条款</li>
+                <li>证据指引</li>
+                <li>庭审回顾</li>
+            </ul>
+            <!--弹层-->
+            <div class="fd-pop-up">
+                <div class="fd-left-tab-bottom">
+                    <div class="fd-left-tab1 fd-left-common-tab fd-common-popup">
+                        <p class="fd-tab1-title">提示</p>
+                        <div class="fd-fd-tab1-upload">
+                            <img src="../images/index-uploadfile.png" alt="">
+                            <div class="fd-tab1-close">关闭</div>
+                        </div>
+                    </div>
+                    <div class="fd-left-tab2 fd-left-common-tab">相似案例</div>
+                    <div class="fd-left-tab3 fd-left-common-tab">法律条款</div>
+                    <div class="fd-left-tab4 fd-left-common-tab">证据指引</div>
+                    <div class="fd-left-tab4 fd-left-common-tab">庭审回顾</div>
+                </div>
+            </div>
+        </div>
+        <!--右侧-->
+        <div class="fd-container-right fd-fl">
+            <!--右侧头部-->
+            <div class="fd-right-tab-top fd-clearfix">
+                <div class="fd-right-tabtop-list active">
+                    <p class="fd-right-tabtop-line"></p>
+                    <p class="fd-right-tabtop-circle"><span>1</span></p>
+                    <div class="fd-right-tabtop-des">被告人身份核实</div>
+                </div>
+                <div class="fd-right-tabtop-list fd-right-tabtop-common">
+                    <p class="fd-right-tabtop-line"></p>
+                    <p class="fd-right-tabtop-circle"><span>2</span></p>
+                    <div class="fd-right-tabtop-des">定罪分析</div>
+                </div>
+                <div class="fd-right-tabtop-list fd-right-tabtop-common">
+                    <p class="fd-right-tabtop-line"></p>
+                    <p class="fd-right-tabtop-circle"><span>3</span></p>
+                    <div class="fd-right-tabtop-des">量刑计算</div>
+                </div>
+                <div class="fd-right-tabtop-list fd-right-tabtop-common">
+                    <p class="fd-right-tabtop-circle"><span>4</span></p>
+                    <div class="fd-right-tabtop-des">裁判文书</div>
+                </div>
+            </div>
+            <!--被告人-->
+            <div class="fd-right-content">
+                <div class="fd-right-content-toptab">
+                    <span class="fd-right-content-leftarrow fd-right-common-arrow" id="fd-right-toleft"><img src="../images/arrow-left.png" alt=""></span>
+                    <ul class="fd-right-content-tabtitle fd-clearfix">
+                        <li class="active"><img src="../images/person-card.png" alt=""><span>朱某某（被告人）</span></li>
+                        <li><img src="../images/person-card.png" alt=""><span>徐乐乐（被告人）</span></li>
+                    </ul>
+                    <span class="fd-right-content-rightarrow fd-right-common-arrow" id="fd-right-toright"><img src="../images/arrow-right.png" alt=""></span>
+                </div>
+                <div class="fd-right-content-bottomtab">
+                    <div class="fd-right-childtab-wrap">
+                        <div class="fd-right-content-childtab fd-right-content-childtab1">
+                            <div class="fd-right-jbxx">
+                                <h3>基本信息<span class="fd-right-jbxx-ly">来源：起诉书</span>
+                                    <img src="../images/edit.png" alt="" class="fd-right-jbxx-edit"></h3>
+                                <table class="fd-right-jbxx-table">
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">姓名</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="朱某某"></td>
+                                        <td class="fd-right-jbxx-title">民族</td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value="汉"></td>
+                                    </tr>
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">性别</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="男"></td>
+                                        <td class="fd-right-jbxx-title">文化程度</td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value="初中"></td>
+                                    </tr>
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">出生日期</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="1983年8月6日"></td>
+                                        <td class="fd-right-jbxx-title">证件类型</td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value="中华人民共和国居民身份证"></td>
+                                    </tr>
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">职业</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="无"></td>
+                                        <td class="fd-right-jbxx-title">证件号码</td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value="458796554621015203"></td>
+                                    </tr>
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">工作单位</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="无"></td>
+                                        <td class="fd-right-jbxx-title fd-right-jbxx-warn">现居住地
+                                            <img src="../images/warn.png" alt="">
+                                            <div class="fd-right-warn-detail">
+                                                <div class="fd-right-warn-arrow">
+                                                    <i></i>
+                                                    <span></span>
+                                                </div>
+                                                <p class="fd-right-warn-information">现居住地:
+                                                    <span class="fd-right-warn-update">焦作市山阳区小李村2号</span>
+                                                    <span class="fd-right-warn-infor">(起诉书信息)</span>
+                                                    <span class="fd-right-warn-btn fd-fr">采用</span>
+                                                </p>
+                                                <p class="fd-right-warn-information">现居住地:
+                                                    <span class="fd-right-warn-update">焦作市山阳区小李村3号</span>
+                                                    <span class="fd-right-warn-infor">(审判系统信息)</span>
+                                                    <span class="fd-right-warn-btn fd-fr">采用</span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value="焦作市山阳区小李村1号"></td>
+                                    </tr>
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">户籍地</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="焦作市山阳区小李村1号"></td>
+                                        <td class="fd-right-jbxx-title"></td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value=""></td>
+                                    </tr>
+                                </table>
+                                <div class="fd-right-warn-message">
+                                    <img src="../images/warn.png" alt=""><span>提示：此标识表示该项信息有差异，请进行查看</span>
+                                </div>
+                            </div>
+                            <div class="fd-right-qklj">
+                                <h3>前科劣迹 </h3>
+                                <ul class="fd-right-qklj-ul">
+                                    <li class="fd-right-qklj-li active">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2009年12月16日犯盗窃罪，判处有期徒刑一年</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                    <li class="fd-right-qklj-li active">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2010年12月16日犯盗窃罪，判处有期徒刑一年</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                    <li class="fd-right-qklj-li">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2011年12月16日犯盗窃罪，判处有期徒刑一年 <i>(2018)某刑初910号</i></span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                    <li class="fd-right-qklj-li active">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2012年12月16日犯盗窃罪，判处有期徒刑一年</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                </ul>
+                                <div class="fd-right-qklj-btn">确认并生成文书表述</div>
+                                <div class="fd-right-commit-detail"></div>
+                            </div>
+                            <div class="fd-right-qzcs">
+                                <h3>强制措施tab1 </h3>
+                                <ul class="fd-right-qklj-ul">
+                                    <li class="fd-right-qklj-li active">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2017年日因涉嫌盗窃，焦作市公安局焦南分局刑事拘留</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                    <li class="fd-right-qklj-li">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2018年经焦作市解放区人民检察院批准逮捕，次日
+被焦作市公安局焦南分局执行逮捕,经焦作市解放区人民检察院批准逮捕，次日
+被焦作市公安局焦南分局执行逮捕，经焦作市解放区人民检察院批准逮捕，次日
+被焦作市公安局焦南分局执行逮捕</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                    <li class="fd-right-qklj-li">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2019年因涉嫌盗窃，焦作市公安局焦南分局刑事拘留焦作市公安局焦南分局刑事拘留焦作市公安局焦南分局刑事拘留</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                </ul>
+                                <div class="fd-right-qklj-btn">确认并生成文书表述</div>
+                                <div class="fd-right-commit-detail"></div>
+                            </div>
+                        </div>
+                        <div class="fd-right-content-childtab fd-right-content-childtab2">
+                            <div class="fd-right-jbxx">
+                                <h3>定罪分析<span class="fd-right-jbxx-ly">来源：起诉书</span>
+                                    <img src="../images/edit.png" alt="" class="fd-right-jbxx-edit"></h3>
+                                <table class="fd-right-jbxx-table">
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">姓名</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="徐乐乐"></td>
+                                        <td class="fd-right-jbxx-title">民族</td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value="汉"></td>
+                                    </tr>
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">性别</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="男"></td>
+                                        <td class="fd-right-jbxx-title">文化程度</td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value="初中"></td>
+                                    </tr>
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">出生日期</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="1983年8月6日"></td>
+                                        <td class="fd-right-jbxx-title">证件类型</td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value="中华人民共和国居民身份证"></td>
+                                    </tr>
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">职业</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="无"></td>
+                                        <td class="fd-right-jbxx-title">证件号码</td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value="458796554621015203"></td>
+                                    </tr>
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">工作单位</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="无"></td>
+                                        <td class="fd-right-jbxx-title fd-right-jbxx-warn">现居住地
+                                            <img src="../images/warn.png" alt="">
+                                            <div class="fd-right-warn-detail">
+                                                <div class="fd-right-warn-arrow">
+                                                    <i></i>
+                                                    <span></span>
+                                                </div>
+                                                <p class="fd-right-warn-information">现居住地:
+                                                    <span class="fd-right-warn-update">焦作市山阳区小李村2号</span>
+                                                    <span class="fd-right-warn-infor">(起诉书信息)</span>
+                                                    <span class="fd-right-warn-btn fd-fr">采用</span>
+                                                </p>
+                                                <p class="fd-right-warn-information">现居住地:
+                                                    <span class="fd-right-warn-update">焦作市山阳区小李村3号</span>
+                                                    <span class="fd-right-warn-infor">(审判系统信息)</span>
+                                                    <span class="fd-right-warn-btn fd-fr">采用</span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value="焦作市山阳区小李村1号"></td>
+                                    </tr>
+                                    <tr class="fd-right-jbxx-tr">
+                                        <td class="fd-right-jbxx-title">户籍地</td>
+                                        <td class="fd-right-jbxx-description"><input type="text" readonly value="焦作市山阳区小李村1号"></td>
+                                        <td class="fd-right-jbxx-title"></td>
+                                        <td class="fd-right-jbxx-detail"><input type="text" readonly value=""></td>
+                                    </tr>
+                                </table>
+                                <div class="fd-right-warn-message">
+                                    <img src="../images/warn.png" alt=""><span>提示：此标识表示该项信息有差异，请进行查看</span>
+                                </div>
+                            </div>
+                            <div class="fd-right-qklj">
+                                <h3>前科劣迹 </h3>
+                                <ul class="fd-right-qklj-ul">
+                                    <li class="fd-right-qklj-li">
+                                        <span class="fd-right-qklj-icon active"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2001年12月16日犯盗窃罪，判处有期徒刑一年</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                    <li class="fd-right-qklj-li">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2002年12月16日犯盗窃罪，判处有期徒刑一年</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                    <li class="fd-right-qklj-li active">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2003年12月16日犯盗窃罪，判处有期徒刑一年犯盗窃罪，判处有期徒刑一年 <i>(2018)某刑初910号</i></span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                    <li class="fd-right-qklj-li">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2004年12月16日犯盗窃罪，判处有期徒刑一年</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                </ul>
+                                <div class="fd-right-qklj-btn">确认并生成文书表述</div>
+                                <div class="fd-right-commit-detail"></div>
+                            </div>
+                            <div class="fd-right-qzcs">
+                                <h3>强制措施 </h3>
+                                <ul class="fd-right-qklj-ul">
+                                    <li class="fd-right-qklj-li">
+                                        <span class="fd-right-qklj-icon active"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2005年10月17日因涉嫌盗窃，焦作市公安局焦南分局刑事拘留</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                    <li class="fd-right-qklj-li">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2006年11月21日因涉嫌盗窃，经焦作市解放区人民检察院批准逮捕，次日
+被焦作市公安局焦南分局执行逮捕</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                    <li class="fd-right-qklj-li active">
+                                        <span class="fd-right-qklj-icon"><img src="../images/check.png" alt=""></span>
+                                        <span class="fd-right-qklj-detail">2007年10月17日因涉嫌盗窃，焦作市公安局焦南分局刑事拘留</span>
+                                        <span class="fd-right-qklj-from">来源：起诉书</span>
+                                    </li>
+                                </ul>
+                                <div class="fd-right-qklj-btn">确认并生成文书表述</div>
+                                <div class="fd-right-commit-detail"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/lib/require/require.min.js" data-main="../js/main.js"></script>
+</body>
+</html>

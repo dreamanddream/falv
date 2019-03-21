@@ -1,0 +1,49 @@
+.fd-clearfix:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+.fd-clearfix {
+    zoom: 1;
+}
+.fd-fl {
+    float: left;
+}
+.fd-fr {
+    float: right;
+}
+.fd-none {
+    float: none;
+}
+.fd-margin {
+    margin: 0 auto;
+}
+/*版心宽度*/
+.fd-body-wrap {
+    width: 100%;
+    /*width: 1440px;*/
+    margin: 0 auto;
+    background: url("../images/header-back.png") repeat-x;
+}
+body {
+    min-width: 1440px;
+}
+/*头部*/
+.fd-header {
+    position: relative;
+    width: 100%;
+    background: url("../images/nav-back.png") no-repeat;
+}
+.fd-header img {
+    margin-left: 30px;
+    margin-top: 8px;
+}
+.fd-header p {
+    position: absolute;
+    top: 10px;
+    left: 75px;
+    font-size: 20px;
+    color: #fefeff;
+}

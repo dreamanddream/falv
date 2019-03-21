@@ -1,0 +1,86 @@
+@charset "utf-8";
+/*重置浏览器样式*/
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+hmtl, body {font-family: "Microsoft YaHei";}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset, img {
+    border: 0;
+}
+img,input {
+    vertical-align: middle;
+    border: none;
+}
+address,caption,em,strong,th,th {
+    font-weight: 400;
+    font-style: normal;
+}
+ol, ul {
+    list-style: none;
+}
+caption, th {
+    text-align: left;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 400;
+    font-size: 100%;
+}
+q:before,q:after {
+    content: ''
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+}
+a:focus, input, textarea {
+    outline-style: none;
+}
+a:hover {
+    color: #00a0e9;
+}
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+}
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+    vertical-align: baseline;
+}
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+
+template, /* 1 */
+[hidden] {
+    display: none;
+}
